@@ -27,4 +27,4 @@ Then add this dependency to your project's pom.xml:
 
 = Ant =
 
-Manually download the feed reader jar from the [download page http://code.google.com/p/android-rome-feed-reader/downloads/list]. You will also need to download [JDOM 1.0 http://www.jdom.org/]. Add these to your project's libraries and you're good to go.
+Manually download the feed reader jar from the [http://code.google.com/p/android-rome-feed-reader/downloads/list download page]. You will also need to download [http://www.jdom.org/ JDOM 1.0]. Add these to your project's libraries and you're good to go.
