@@ -12,8 +12,9 @@
   <url>http://code.google.com/p/android-rome-feed-reader/</url>
 
   <scm>
-    <connection>scm:hg:https://android-rome-feed-reader.googlecode.com/hg</connection>
-    <developerConnection>scm:hg:https://android-rome-feed-reader.googlecode.com/hg</developerConnection>
+    <url>http://code.google.com/p/android-rome-feed-reader/source/browse</url>
+    <connection>scm:hg:http://android-rome-feed-reader.googlecode.com/svn/trunk</connection>
+    <developerConnection>scm:hg:https://android-rome-feed-reader.googlecode.com/svn/trunk</developerConnection>
   </scm>
 
   <developers>
