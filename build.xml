@@ -1,0 +1,36 @@
+<project name="repackage-rome-and-java-beans" default="repackage">
+  <target name="repackage">
+    <property name="output.temp" value="${output.final}jar"/>
+
+    <antcall target="repackage-with-jarjar"/>
+    <antcall target="fix-rome-properties"/>
+  </target>
+
+  <target name="repackage-with-jarjar">
+    <taskdef name="jarjar" classname="com.tonicsystems.jarjar.JarJarTask"
+             classpath="${basedir}/antlib/jarjar-1.0.jar"/>
+
+    <jarjar destfile="${output.temp}" update="true">
+      <zipfileset src="${basedir}/lib/beans.jar"/>
+      <zipfileset src="${basedir}/lib/rome-1.0.0.jar"/>
+      <zipfileset src="${basedir}/lib/rome-fetcher-1.0.0.jar"/>
+      <rule pattern="com.sun.syndication.**" result="com.google.code.rome.android.repackaged.@0"/>
+      <rule pattern="org.apache.harmony.beans.**" result="com.google.code.rome.android.repackaged.@0"/>
+      <rule pattern="java.beans.**" result="com.google.code.rome.android.repackaged.@0"/>
+    </jarjar>
+  </target>
+
+  <target name="fix-rome-properties">
+    <property name="jarjar.working.dir" value="target/jarjar-explode"/>
+
+    <unzip src="${output.temp}" dest="${jarjar.working.dir}"/>
+
+    <!-- Change rome.properties to point to the repackaged classes -->
+    <replace file="${jarjar.working.dir}/com/google/code/rome/android/repackaged/com/sun/syndication/rome.properties">
+      <replacetoken><![CDATA[com.sun.syndication]]></replacetoken>
+      <replacevalue><![CDATA[com.google.code.rome.android.repackaged.com.sun.syndication]]></replacevalue>
+    </replace>
+
+    <zip destfile="${output.final}" basedir="${jarjar.working.dir}" update="true"/>
+  </target>
+</project>
