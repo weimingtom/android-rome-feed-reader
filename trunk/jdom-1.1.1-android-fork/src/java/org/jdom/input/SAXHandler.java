@@ -527,7 +527,7 @@ public class SAXHandler extends DefaultHandler implements LexicalHandler,
             String prefix = "";
 
             // Determine any prefix on the Element
-            if (!qName.equals(localName)) {
+            if (!qName.equals(localName)  && qName.length() > 0) {
                 int split = qName.indexOf(":");
                 prefix = qName.substring(0, split);
             }
