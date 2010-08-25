@@ -4,10 +4,11 @@
   <artifactId>android-rome-feed-reader</artifactId>
   <version>1.0.0</version>
   <versioning>
-    <release>1.0.0</release>
+    <release>1.0.0-r2</release>
     <versions>
       <version>1.0.0</version>
+      <version>1.0.0-r2</version>
     </versions>
-    <lastUpdated>20100801063724</lastUpdated>
+    <lastUpdated>20100825044921</lastUpdated>
   </versioning>
 </metadata>
