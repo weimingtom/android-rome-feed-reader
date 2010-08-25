@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.jdom</groupId>
+  <artifactId>jdom</artifactId>
+  <version>1.1.1-android-fork-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>JDOM</name>
+  <description>
+    JDOM is, quite simply, a Java representation of an XML document. JDOM provides a way to represent that document for
+    easy and efficient reading, manipulation, and writing. It has a straightforward API, is a lightweight and fast, and
+    is optimized for the Java programmer. It's an alternative to DOM and SAX, although it integrates well with both DOM
+    and SAX.
+  </description>
+  <url>http://code.google.com/p/android-rome-feed-reader/</url>
+
+  <scm>
+    <url>http://code.google.com/p/android-rome-feed-reader/source/browse</url>
+    <connection>scm:svn:http://android-rome-feed-reader.googlecode.com/svn/trunk/jdom-1.1.1-android-fork</connection>
+    <developerConnection>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/trunk/jdom-1.1.1-android-fork</developerConnection>
+  </scm>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <!--<phase>process-classes</phase>-->
+            <phase>package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+		<delete file="target/jdom-${project.version}.jar"/>
+		<exec executable="build.bat">
+		</exec>
+		<copy file="build/jdom.jar" tofile="target/jdom-${project.version}.jar"/>
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <extensions>
+            <extension>
+                    <groupId>org.apache.maven.wagon</groupId>
+                    <artifactId>wagon-scm</artifactId>
+                    <version>1.0-beta-6</version>
+            </extension>
+            <extension>
+                    <groupId>org.apache.maven.scm</groupId>
+                    <artifactId>maven-scm-manager-plexus</artifactId>
+                    <version>1.1</version>
+            </extension>
+            <extension>
+                    <groupId>org.apache.maven.scm</groupId>
+                    <artifactId>maven-scm-provider-svnexe</artifactId>
+                    <version>1.1</version>
+            </extension>
+    </extensions>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.6.1</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xmlParserAPIs</artifactId>
+      <version>2.6.1</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jaxen-core</artifactId>
+      <version>1.0-FCS</version>  <!-- patched 1.0-FCS -->
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jaxen-jdom</artifactId>
+      <version>1.0-FCS</version>  <!-- patched 1.0-FCS -->
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>saxpath</artifactId>
+      <version>1.0-FCS</version>  <!-- patched 1.0-FCS -->
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>xalan</groupId>
+      <artifactId>xalan</artifactId>
+      <version>2.5.D1</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+  <distributionManagement>
+    <repository>
+      <id>android-rome-feed-reader-repository</id>
+      <name>Android ROME Feed Reader Repository</name>
+      <url>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/maven2/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>android-rome-feed-reader-snapshots</id>
+      <name>Android ROME Feed Reader Repository</name>
+      <url>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/maven2/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
