@@ -4,7 +4,7 @@
 
   <groupId>org.jdom</groupId>
   <artifactId>jdom</artifactId>
-  <version>1.1.1-android-fork</version>
+  <version>1.1.1-android-fork2-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>JDOM</name>
@@ -17,9 +17,9 @@
   <url>http://code.google.com/p/android-rome-feed-reader/</url>
 
   <scm>
-    <url>http://code.google.com/p/android-rome-feed-reader/source/browse/tags/jdom-1.1.1-android-fork</url>
-    <connection>scm:svn:http://android-rome-feed-reader.googlecode.com/svn/tags/jdom-1.1.1-android-fork</connection>
-    <developerConnection>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/tags/jdom-1.1.1-android-fork</developerConnection>
+    <url>http://code.google.com/p/android-rome-feed-reader/source/browse</url>
+    <connection>scm:svn:http://android-rome-feed-reader.googlecode.com/svn/trunk/jdom-1.1.1-android-fork</connection>
+    <developerConnection>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/trunk/jdom-1.1.1-android-fork</developerConnection>
   </scm>
 
   <build>
