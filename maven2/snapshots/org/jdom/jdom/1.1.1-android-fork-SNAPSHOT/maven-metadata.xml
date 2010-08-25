@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.jdom</groupId>
+  <artifactId>jdom</artifactId>
+  <version>1.1.1-android-fork-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20100825.040111</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20100825040115</lastUpdated>
+  </versioning>
+</metadata>
