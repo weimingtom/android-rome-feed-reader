@@ -5,14 +5,14 @@
   <groupId>com.google.code.android-rome-feed-reader</groupId>
   <artifactId>android-rome-feed-reader</artifactId>
   <name>Android ROME Feed Reader</name>
-  <version>1.0.0-r2</version>
+  <version>1.0.0-r3-SNAPSHOT</version>
 
   <url>http://code.google.com/p/android-rome-feed-reader/</url>
 
   <scm>
-    <url>http://code.google.com/p/android-rome-feed-reader/source/browse/tags/android-rome-feed-reader-1.0.0-r2</url>
-    <connection>scm:svn:http://android-rome-feed-reader.googlecode.com/svn/tags/android-rome-feed-reader-1.0.0-r2</connection>
-    <developerConnection>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/tags/android-rome-feed-reader-1.0.0-r2</developerConnection>
+    <url>http://code.google.com/p/android-rome-feed-reader/source/browse</url>
+    <connection>scm:svn:http://android-rome-feed-reader.googlecode.com/svn/trunk</connection>
+    <developerConnection>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/trunk</developerConnection>
   </scm>
 
   <developers>
