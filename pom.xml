@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.google.code.android-rome-feed-reader</groupId>
-  <artifactId>android-rome-feed-reader</artifactId>
-  <name>Android ROME Feed Reader</name>
-  <version>1.0.1-SNAPSHOT</version>
+  <groupId>org.jdom</groupId>
+  <artifactId>jdom</artifactId>
+  <version>1.1.1-android-fork</version>
+  <packaging>jar</packaging>
 
+  <name>JDOM</name>
+  <description>
+    JDOM is, quite simply, a Java representation of an XML document. JDOM provides a way to represent that document for
+    easy and efficient reading, manipulation, and writing. It has a straightforward API, is a lightweight and fast, and
+    is optimized for the Java programmer. It's an alternative to DOM and SAX, although it integrates well with both DOM
+    and SAX.
+  </description>
   <url>http://code.google.com/p/android-rome-feed-reader/</url>
 
   <scm>
-    <url>http://code.google.com/p/android-rome-feed-reader/source/browse</url>
-    <connection>scm:svn:http://android-rome-feed-reader.googlecode.com/svn/trunk</connection>
-    <developerConnection>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/trunk</developerConnection>
+    <url>http://code.google.com/p/android-rome-feed-reader/source/browse/tags/jdom-1.1.1-android-fork</url>
+    <connection>scm:svn:http://android-rome-feed-reader.googlecode.com/svn/tags/jdom-1.1.1-android-fork</connection>
+    <developerConnection>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/tags/jdom-1.1.1-android-fork</developerConnection>
   </scm>
-
-  <developers>
-    <developer>
-      <id>ashlux</id>
-      <name>Ash Lux</name>
-      <url>http://www.ashlux.com/</url>
-      <email>ashlux@gmail.com</email>
-    </developer>
-  </developers>
 
   <build>
     <plugins>
@@ -37,9 +35,10 @@
             </goals>
             <configuration>
               <tasks>
-                <ant antfile="${basedir}/build.xml" target="repackage">
-                  <property name="output.final" value="${build.directory}/${build.finalName}.jar" />
-                </ant>
+		<delete file="target/jdom-${project.version}.jar" />
+		<exec executable="build.bat">
+		</exec>
+		<copy file="build/jdom.jar" tofile="target/jdom-${project.version}.jar" />
               </tasks>
             </configuration>
           </execution>
@@ -67,9 +66,40 @@
 
   <dependencies>
     <dependency>
-      <groupId>jdom</groupId>
-      <artifactId>jdom</artifactId>
-      <version>1.0</version>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+      <version>2.6.1</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xmlParserAPIs</artifactId>
+      <version>2.6.1</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jaxen-core</artifactId>
+      <version>1.0-FCS</version>  <!-- patched 1.0-FCS -->
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jaxen-jdom</artifactId>
+      <version>1.0-FCS</version>  <!-- patched 1.0-FCS -->
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>saxpath</artifactId>
+      <version>1.0-FCS</version>  <!-- patched 1.0-FCS -->
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>xalan</groupId>
+      <artifactId>xalan</artifactId>
+      <version>2.5.D1</version>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 
@@ -85,5 +115,4 @@
       <url>scm:svn:https://android-rome-feed-reader.googlecode.com/svn/maven2/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
-
 </project>
